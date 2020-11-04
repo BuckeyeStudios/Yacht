@@ -124,7 +124,6 @@ def add_template(db: Session, template: models.containers.Template):
                 _template.items.append(template_content)
     except (OSError, TypeError, ValueError) as err:
         # Optional handle KeyError here too.
-        print("data request failed", err)
         raise HTTPException(status_code=err.status_code, detail=err.explanation)
 
     try:
